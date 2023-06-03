@@ -1,9 +1,43 @@
+import CharacterCard from "../CharacterCard/CharacterCard";
+import { Character, CharacterList } from "@/interfaces/Character/Character";
+import { skill, skillsList } from "@/interfaces/battleAction/skill";
 
+const skillTest: skillsList = [
+    {
+        name: 'sword slash',
+        power: 1,
+        cost: 0,
+    },
+    {
+        name: 'double hit',
+        power: 5,
+        cost: 0,
+    }
+]
+
+const playerCharacter: CharacterList= [
+    {
+    name : 'test',
+    pv : 150,
+    id : 1,
+    skillList : skillTest
+    },
+    {
+    name : 'Orion',
+    pv : 150,
+    id : 1,
+    skillList : skillTest
+    }
+]
 
 const playerBattleCharacterList: React.FC = () => {
     return (
-        <div>
-            
+        <div className="bg-red-900 w-1/2 m-auto p-4">
+            {playerCharacter.map((character: Character) => {
+                return(
+                    <CharacterCard key={character.id} {...character} />
+                )
+            })}
         </div>
     )
 }

@@ -1,9 +1,11 @@
-import { attack } from "../battleAction/attack";
+import { skillsList } from "../battleAction/skill";
 
 
 export interface Character {
     name: string;
     pv: number;
     id: number;
-    attackList : attack[]
+    skillList : skillsList;
 }
+
+export type CharacterList = Character[];
