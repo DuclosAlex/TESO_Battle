@@ -6,14 +6,21 @@ import SkillBox from "../SkillBox/SkillBox";
 
 const SkillsList: React.FC<skillsList> = (skillsList) => {
 
+    //
+    const skills = Object.values(skillsList)
+
     function showList(): void {
-        console.log(skillsList);
+        console.log(skills);
     }
 
     
     return (
-        <div className="flex p-4 bg-green-100">
-            
+        <div className="flex p-4 bg-green-900">
+            {skills.map((skill) => {
+                return (
+                    <SkillBox {...skill} />
+                )
+            })}
             <button className="bg-black" onClick={() => showList()}>Test</button>
         </div>
     )

@@ -1,3 +1,4 @@
+
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { Character, CharacterList } from "@/interfaces/Character/Character";
 import { skill, skillsList } from "@/interfaces/battleAction/skill";
@@ -31,13 +32,16 @@ const playerCharacter: CharacterList= [
 ]
 
 const playerBattleCharacterList: React.FC = () => {
+    
     return (
         <div className="bg-red-900 w-1/2 m-auto p-4">
             {playerCharacter.map((character: Character) => {
                 return(
+                    // Pour vérifier le typade des valeurs Typescript force à utiliser le spread Operator
                     <CharacterCard key={character.id} {...character} />
                 )
             })}
+
         </div>
     )
 }
