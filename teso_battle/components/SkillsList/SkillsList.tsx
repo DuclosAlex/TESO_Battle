@@ -18,7 +18,7 @@ const SkillsList: React.FC<skillsList> = (skillsList) => {
         <div className="flex p-4 bg-green-900">
             {skills.map((skill) => {
                 return (
-                    <SkillBox {...skill} />
+                    <SkillBox key={skill.id} {...skill} />
                 )
             })}
             <button className="bg-black" onClick={() => showList()}>Test</button>

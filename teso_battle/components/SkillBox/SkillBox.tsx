@@ -9,4 +9,6 @@ const SkillBox: React.FC<skill> = (skill) => {
     )
 }
 
+
+
 export default SkillBox;
