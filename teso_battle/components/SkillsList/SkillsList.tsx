@@ -3,10 +3,14 @@
 import { skillsList, skill } from "@/interfaces/battleAction/skill";
 import SkillBox from "../SkillBox/SkillBox";
 
+interface SkillsListProps {
+    skillsList: skillsList;
+}
 
-const SkillsList: React.FC<skillsList> = (skillsList) => {
 
-    //
+const SkillsList: React.FC<SkillsListProps> = ({skillsList}) => {
+
+    
     const skills = Object.values(skillsList)
 
     function showList(): void {

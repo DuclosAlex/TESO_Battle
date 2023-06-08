@@ -1,4 +1,5 @@
 
+
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { Character, CharacterList } from "@/interfaces/Character/Character";
 import { skill, skillsList } from "@/interfaces/battleAction/skill";
@@ -18,6 +19,21 @@ const skillTest: skillsList = [
     }
 ]
 
+const skillMagic: skillsList = [
+    {
+        name: 'fire ball',
+        power: 1,
+        cost: 0,
+        id : 1
+    },
+    {
+        name: 'ice pike',
+        power: 5,
+        cost: 0,
+        id: 2
+    }
+]
+
 const playerCharacter: CharacterList= [
     {
     name : 'test',
@@ -31,7 +47,7 @@ const playerCharacter: CharacterList= [
     pv : 150,
     id : 2,
     is_selected: false,
-    skillList : skillTest
+    skillList : skillMagic
     }
 ]
 
@@ -43,6 +59,7 @@ const playerBattleCharacterList: React.FC = () => {
                 return(
                     // Pour vérifier le typade des valeurs Typescript force à utiliser le spread Operator
                     <CharacterCard key={character.id} {...character} />
+                    
                 )
             })}
 
