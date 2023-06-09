@@ -17,7 +17,7 @@ const skillTest: skillsList = [
         power: 5,
         cost: 0,
         id: 2,
-        type : skillType.Attack
+        type : skillType.Heal
     },
     {
         name: 'quick slash',
