@@ -13,19 +13,14 @@ const SkillsList: React.FC<SkillsListProps> = ({skillsList}) => {
     
     const skills = Object.values(skillsList)
 
-    function showList(): void {
-        console.log(skills);
-    }
-
     
     return (
-        <div className="flex p-4 bg-green-900">
+        <div className="flex flex-col justify-around p-4 bg-green-900 absolute right-0 bottom-48 h-2/6 w-1/6">
             {skills.map((skill) => {
                 return (
                     <SkillBox key={skill.id} {...skill} />
                 )
             })}
-            <button className="bg-black" onClick={() => showList()}>Test</button>
         </div>
     )
 }
