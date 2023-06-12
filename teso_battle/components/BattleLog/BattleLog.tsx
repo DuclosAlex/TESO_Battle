@@ -2,6 +2,7 @@ import { useEffect, useState} from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { skill, skillMessageLog } from '@/interfaces/battleAction/skill';
 import { resetSkill } from '@/redux/slice/skillSlice';
+import styles from './BattleLog.module.css';
 
 const BattleLog: React.FC = () => {
 
@@ -22,30 +23,13 @@ const BattleLog: React.FC = () => {
                 if(updateLog.length > 5) {
                     updateLog = updateLog.slice(1);
                 }
-                console.log(updateLog);
+                
                 return updateLog;
             })
 
-
-            
+            dispatch(resetSkill())            
         }
-
-        // if( currentSkillState.currentSkill[0]) {
-        //     const lastSkill = currentSkillState.currentSkill[currentSkillState.currentSkill.length -1];
-        //     setSkillInLog((prevSkillInLog) => {
-        //         const skillWithNewId = { ...lastSkill, id : Date.now()};    
-        //         let updatedSkillInLong = [ ...prevSkillInLog, skillWithNewId];
-        //         if(updatedSkillInLong.length > 5) {
-        //             updatedSkillInLong =  updatedSkillInLong.slice(1);
-        //         }
-        //         return updatedSkillInLong
-        //     });
-
-        //     dispatch(resetSkill())
-        // }
     }, [currentSkillState])
-
-    console.log(skillInLog)
 
 
     return (
@@ -54,8 +38,8 @@ const BattleLog: React.FC = () => {
             skillInLog.map((skillLog) => (
                 
               <p className={`
-              p-2 text-lg
-              ${skillLog.skill.type === 'attack' ? 'text-red-600' : skillLog.skill.type === 'heal' ? 'text-green-500' : ''}
+              ${styles.logText}
+              ${skillLog.skill.type === 'attack' ? `${styles.redLog}` : skillLog.skill.type === 'heal' ? 'text-green-500' : ''}
               `
               } key={skillLog.skill.id}>{skillLog.character.name} utilise {skillLog.skill.name} et{' '}
                 {skillLog.skill.type === 'attack' && (
