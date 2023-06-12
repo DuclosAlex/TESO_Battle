@@ -5,19 +5,19 @@ import SkillsList from "../SkillsList/SkillsList";
 import { skillsList } from "@/interfaces/battleAction/skill";
 import { useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
+import BattleLog from "../BattleLog/BattleLog";
 
 
 const GameObject: React.FC = () => {
 
     const characterState = useAppSelector((state) => state.characterSlice);
-    console.log(characterState);
     const [currentCharacterSkills, setCurrentCharacterSkill] = useState<skillsList | null>(null)
 
     useEffect(() => {
         if(characterState.characters[0]) {
 
             setCurrentCharacterSkill(characterState.characters[0].skillList);
-            console.log(currentCharacterSkills)
+
         }
     }, [characterState])
 
@@ -27,6 +27,7 @@ const GameObject: React.FC = () => {
             { currentCharacterSkills &&(
                 <SkillsList  skillsList={ currentCharacterSkills} />
             )}
+            <BattleLog />
         </div>
     ) 
 }

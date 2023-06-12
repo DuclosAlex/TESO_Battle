@@ -23,7 +23,7 @@ const skillTest: skillsList = [
         name: 'quick slash',
         power: 5,
         cost: 0,
-        id: 2,
+        id: 3,
         type : skillType.Attack
     }
 ]
@@ -47,7 +47,7 @@ const skillMagic: skillsList = [
         name: 'thunder',
         power: 5,
         cost: 0,
-        id: 2,
+        id: 3,
         type : skillType.Attack
     }
 ]
