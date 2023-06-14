@@ -13,7 +13,7 @@ const skillTest: skillsList = [
         type : skillType.Attack
     },
     {
-        name: 'double hit',
+        name: 'heal',
         power: 5,
         cost: 0,
         id: 2,

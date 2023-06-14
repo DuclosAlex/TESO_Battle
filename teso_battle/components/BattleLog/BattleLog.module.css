@@ -4,6 +4,13 @@
     line-height: 1.75rem;
 }
 
+.logBackground {
+    background-image: linear-gradient(to bottom, rgba(94, 81, 26, 0.5), rgb(60, 53, 25));
+    border-width : 3px;
+    border-style : solid;
+    border-color : goldenrod;
+}
+
 .redLog {
     --tw-text-opacity: 1;
     color: rgb(220 38 38 / var(--tw-text-opacity));

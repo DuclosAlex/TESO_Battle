@@ -6,6 +6,7 @@ import { skillsList } from "@/interfaces/battleAction/skill";
 import { useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
 import BattleLog from "../BattleLog/BattleLog";
+import EnnemyBattleList from "../EnnemyBattleList/EnnemyBattleList";
 
 
 const GameObject: React.FC = () => {
@@ -28,6 +29,7 @@ const GameObject: React.FC = () => {
                 <SkillsList  skillsList={ currentCharacterSkills} />
             )}
             <BattleLog />
+            <EnnemyBattleList />
         </div>
     ) 
 }

@@ -33,7 +33,7 @@ const BattleLog: React.FC = () => {
 
 
     return (
-        <div className='w-1/4 bg-gray-200/30 text-center absolute bottom-1/2 left-0'>
+        <div className={`${styles.logBackground}  w-1/4 text-center absolute bottom-1/2 transform translate-y-1/4`}>
           {skillInLog[0] &&
             skillInLog.map((skillLog) => (
                 
