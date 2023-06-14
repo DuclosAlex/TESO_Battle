@@ -1,4 +1,4 @@
-export interface ennemy {
+export interface Ennemy {
     name: string;
     pv: number;
     image: string;

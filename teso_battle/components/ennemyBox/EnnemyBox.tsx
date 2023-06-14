@@ -1,8 +1,9 @@
-import { ennemy } from "@/interfaces/ennemy/ennemy";
+import { Ennemy } from "@/interfaces/Ennemy/ennemy";
 import Image from "next/image";
-import styles from './EnnemyBox.module.css'
+import styles from './EnnemyBox.module.css';
+import { motion } from "framer-motion";
 
-const EnnemyBox: React.FC<ennemy> = (ennemy) => {
+const EnnemyBox: React.FC<Ennemy> = (ennemy) => {
     return (
         <div className={`w-1/3 bg-green-400 flex flex-col items-center justify-center text-center p-2 h-full ${styles.ennemyContainer}`}>
             <p className="w-full">{ennemy.name}</p>

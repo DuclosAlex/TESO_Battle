@@ -1,7 +1,7 @@
-import EnnemyBox from "../ennemyBox/EnnemyBox";
-import { ennemy } from "@/interfaces/ennemy/ennemy";
+import EnnemyBox from "../EnnemyBox/EnnemyBox";
+import { Ennemy } from "@/interfaces/Ennemy/ennemy";
 
-const ennemyArray: ennemy[] = [
+const ennemyArray: Ennemy[] = [
     {
         name : 'Draugr',
         pv : 150,
@@ -21,7 +21,7 @@ const ennemyArray: ennemy[] = [
 const EnnemyBattleList: React.FC = () => {
     return (
         <div className="absolute inset-x-0 top-2  flex items-center h-1/4 justify-around w-1/2 m-auto">
-            {ennemyArray.map((ennemy: ennemy) => {
+            {ennemyArray.map((ennemy: Ennemy) => {
                 return (
                     <EnnemyBox key={ennemy.id} {...ennemy}  />
                 )

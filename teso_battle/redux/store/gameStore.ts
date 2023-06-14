@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import characterSlice from "@/redux/slice/characterSlice";
 import  skillSlice from "../slice/skillSlice";
+import ennemySlice from "../slice/ennemySlice";
 
 
 export const store = configureStore({
     reducer : {
-        characterSlice, skillSlice
+        characterSlice, skillSlice, ennemySlice
     }
 })
 
