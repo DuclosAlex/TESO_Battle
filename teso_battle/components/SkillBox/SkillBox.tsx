@@ -1,12 +1,9 @@
 import { skill } from "@/interfaces/battleAction/skill"
-import {useEffect } from 'react';
 import { addSkill } from "@/redux/slice/skillSlice";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import styles from './SkillBox.module.css'
+import {  useAppDispatch } from "@/redux/hooks";
 
 const SkillBox: React.FC<skill> = (skill) => {
 
-    let currentSkill = useAppSelector((state) => state.skillSlice);
     const dispatch = useAppDispatch();
 
     const handleClick = () => {

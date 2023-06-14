@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { skill, skillMessageLog } from '@/interfaces/battleAction/skill';
+import { skillMessageLog } from '@/interfaces/battleAction/skill';
 import { resetSkill } from '@/redux/slice/skillSlice';
 import styles from './BattleLog.module.css';
 
@@ -33,7 +33,7 @@ const BattleLog: React.FC = () => {
 
 
     return (
-        <div className={`${styles.logBackground}  w-1/4 text-center absolute bottom-1/2 transform translate-y-1/4`}>
+        <div className={`${skillInLog[0] ? styles.logBackground : ''}  w-1/4 text-center absolute bottom-1/2 transform translate-y-1/4`}>
           {skillInLog[0] &&
             skillInLog.map((skillLog) => (
                 
