@@ -15,7 +15,7 @@ const SkillsList: React.FC<SkillsListProps> = ({skillsList}) => {
 
     
     return (
-        <div className="flex flex-col justify-around p-4 bg-green-900 absolute right-0 bottom-48 h-2/6 w-1/6">
+        <div className="flex flex-col justify-around p-4  absolute right-0 bottom-1/2 translate-y-1/4 h-2/6 w-1/6">
             {skills.map((skill) => {
                 return (
                     <SkillBox key={skill.id} {...skill} />

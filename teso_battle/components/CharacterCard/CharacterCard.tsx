@@ -5,13 +5,14 @@ import { Character } from "@/interfaces/Character/Character";
 import { selectCharacter, reset } from "@/redux/slice/characterSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
+import Image from 'next/image'
 
 
 const CharacterCard: React.FC<Character> = (character) => {
 
     const characterState = useAppSelector((state) => state.characterSlice);
     const dispatch = useAppDispatch();
-    const [isCharacterSelected, setIsCharacterSelected] = useState(character.is_selected)
+    const [isCharacterSelected, setIsCharacterSelected] = useState(false)
 
     const handleClick = () => {
 
@@ -21,7 +22,7 @@ const CharacterCard: React.FC<Character> = (character) => {
         }
         setIsCharacterSelected(true)
         dispatch(reset());
-        dispatch(selectCharacter({...character, is_selected : true}));
+        dispatch(selectCharacter(character));
         
         
     }
@@ -38,9 +39,14 @@ const CharacterCard: React.FC<Character> = (character) => {
 
 
     return (
-        <div className={`text-center bg-blue-500 p-4 m-auto w-1/4 ${ isCharacterSelected ? styles.selectedCharacter : '' }`}>
+        <div onClick={handleClick} className={`cursor-pointer text-center p-4 m-auto w-1/4 ${styles.characterContainer} ${ isCharacterSelected ? styles.selectedCharacter : '' }`}>
             <p>{ character.name }</p>
-            <button className="bg-yellow-500" onClick={ handleClick } >Test du store</button>
+            <Image className='m-auto'
+                src={character.src}
+                alt={character.alt}
+                width={200}
+                height={200}
+                />
 
         </div>
     )

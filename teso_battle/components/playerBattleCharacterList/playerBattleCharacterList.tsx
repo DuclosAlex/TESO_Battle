@@ -7,21 +7,21 @@ import { skillType, skillsList } from "@/interfaces/battleAction/skill";
 const skillTest: skillsList = [
     {
         name: 'sword slash',
-        power: 1,
+        power: 20,
         cost: 0,
         id : 1,
         type : skillType.Attack
     },
     {
         name: 'heal',
-        power: 5,
+        power: 20,
         cost: 0,
         id: 2,
         type : skillType.Heal
     },
     {
         name: 'quick slash',
-        power: 5,
+        power: 20,
         cost: 0,
         id: 3,
         type : skillType.Attack
@@ -31,21 +31,21 @@ const skillTest: skillsList = [
 const skillMagic: skillsList = [
     {
         name: 'fire ball',
-        power: 1,
+        power: 20,
         cost: 0,
         id : 1,
         type : skillType.Attack
     },
     {
         name: 'ice pike',
-        power: 5,
+        power: 20,
         cost: 0,
         id: 2,
         type : skillType.Attack
     },
     {
         name: 'thunder',
-        power: 5,
+        power: 50,
         cost: 0,
         id: 3,
         type : skillType.Attack
@@ -54,25 +54,36 @@ const skillMagic: skillsList = [
 
 const playerCharacter: CharacterList = [
     {
-    name : 'test',
+    name : 'Ayreen',
     pv : 150,
     id : 1,
-    is_selected : false,
-    skillList : skillTest
+    skillList : skillTest,
+    alt : 'ayreen',
+    src : '/assets/character/ayreen.jpg'
+
     },
     {
-    name : 'Orion',
+    name : 'Emeric',
     pv : 150,
     id : 2,
-    is_selected: false,
-    skillList : skillMagic
+    skillList : skillMagic,
+    alt : 'emeric',
+    src : '/assets/character/emeric.jpg'
+    },
+    {
+    name : 'Jorunn',
+    pv : 2250,
+    id : 3,
+    skillList : skillMagic,
+    alt : 'jorunn',
+    src : '/assets/character/jorunn.jpg'
     }
 ]
 
 const playerBattleCharacterList: React.FC = () => {
     
     return (
-        <div className="bg-red-900 w-3/4 m-auto p-4 absolute inset-x-0 bottom-0 flex justify-around">
+        <div className="w-3/4 m-auto p-4 absolute inset-x-0 bottom-10 flex justify-around">
             {playerCharacter.map((character: Character) => {
                 return(
                     // Pour vérifier le typade des valeurs Typescript force à utiliser le spread Operator
