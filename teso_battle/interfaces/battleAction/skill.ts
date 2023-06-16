@@ -1,5 +1,3 @@
-import { Character } from "../Character/Character";
-
 export interface skill {
     name: string;
     power: number;
@@ -11,11 +9,6 @@ export interface skill {
 export enum skillType {
     Attack = 'attack',
     Heal = 'heal'
-}
-
-export interface skillMessageLog {
-    character: Character;
-    skill: skill;
 }
 
 export type skillsList = skill[]

@@ -1,59 +1,40 @@
 import { useEffect, useState} from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { skillMessageLog } from '@/interfaces/battleAction/skill';
-import { resetSkill } from '@/redux/slice/skillSlice';
+import { resetBattleLog } from '@/redux/slice/battleLogSlice';
 import styles from './BattleLog.module.css';
+import { battleLog } from '@/interfaces/log/battleLog';
 
 const BattleLog: React.FC = () => {
 
-    let currentSkillState = useAppSelector((state) => state.skillSlice);
-    let currentCharacterState = useAppSelector((state) => state.characterSlice.characters[0]);
+    const battleState = useAppSelector((state) => state.battleLogSlice);
     const dispatch = useAppDispatch();
-    const [ skillInLog, setSkillInLog ] = useState<Array<skillMessageLog>>([]);
+    const [ messageInLog, setMessageInLog ] = useState<battleLog[]>([]);
     
-
     useEffect(() => {
-
-        if(currentSkillState.currentSkill[0]) {
-            const lastSkill = currentSkillState.currentSkill[currentSkillState.currentSkill.length -1];
-            setSkillInLog((prevSkilledInlog) => {
-                const skillWithNewId = { ...lastSkill, id: Date.now()};
-                const dataForLog: skillMessageLog = { character : currentCharacterState, skill : skillWithNewId};
-                let updateLog = [ ...prevSkilledInlog, dataForLog];
+        if(battleState.battleLog[0]) {
+            const newLog = battleState.battleLog[0];
+            setMessageInLog((prevMessageInLog) => {
+                let updateLog = [...prevMessageInLog, newLog];
                 if(updateLog.length > 5) {
                     updateLog = updateLog.slice(1);
                 }
-                
-                return updateLog;
+                console.log(updateLog)
+                return updateLog
             })
 
-            dispatch(resetSkill())            
+            dispatch(resetBattleLog());
         }
-    }, [currentSkillState])
-
+    },[battleState])
 
     return (
-        <div className={`${skillInLog[0] ? styles.logBackground : ''}  w-1/4 text-center absolute bottom-1/2 transform translate-y-1/4`}>
-          {skillInLog[0] &&
-            skillInLog.map((skillLog) => (
-                
-              <p className={`
-              ${styles.logText}
-              ${skillLog.skill.type === 'attack' ? `${styles.redLog}` : skillLog.skill.type === 'heal' ? 'text-green-500' : ''}
-              `
-              } key={skillLog.skill.id}>{skillLog.character.name} utilise {skillLog.skill.name} et{' '}
-                {skillLog.skill.type === 'attack' && (
-                    <>
-                        inflige {skillLog.skill.power} dégâts.
-                    </>
-                )}
-                {skillLog.skill.type === 'heal' && (
-                    <>
-                        soigne {skillLog.skill.power} points de vie.
-                    </>
-                )}
-              </p>
-            ))}
+        <div className={`${messageInLog[0] ? styles.logBackground : ''}  w-1/4 text-center absolute bottom-1/2 transform translate-y-1/4`}>
+          {messageInLog[0] &&
+          messageInLog.map((log) => (
+            <p className={` 
+                ${styles.logText}
+                ${log.type === 'attack' ? `${styles.redLog}` : log.type === 'heal' ? 'text-green-500' : ''}`
+        } key={log.id}>{log.log}</p>
+          ))}
         </div>
       );
 }
