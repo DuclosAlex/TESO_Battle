@@ -18,7 +18,6 @@ const BattleLog: React.FC = () => {
                 if(updateLog.length > 5) {
                     updateLog = updateLog.slice(1);
                 }
-                console.log(updateLog)
                 return updateLog
             })
 

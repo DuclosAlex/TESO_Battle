@@ -17,8 +17,7 @@ const CharacterCard: React.FC<Character> = (character) => {
     const handleClick = () => {
 
         if(characterState.characters.some((char) => char.id === character.id)) {
-            console.log(isCharacterSelected)
-            return console.log('Personnage déjà dans le tableau');
+            return 
         }
         setIsCharacterSelected(true)
         dispatch(reset());
@@ -47,7 +46,7 @@ const CharacterCard: React.FC<Character> = (character) => {
                 width={200}
                 height={200}
                 />
-
+            
         </div>
     )
 }
