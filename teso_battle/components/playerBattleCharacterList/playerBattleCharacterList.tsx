@@ -59,7 +59,7 @@ const playerCharacter: CharacterList = [
     id : 1,
     skillList : skillTest,
     alt : 'ayreen',
-    src : '/assets/character/ayreen.jpg'
+    src : '/assets/character/ayrenn.jpg'
 
     },
     {

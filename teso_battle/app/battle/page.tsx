@@ -3,7 +3,7 @@ import GameObject from "@/components/gameObject/gameObject";
 import styles from './page.module.css';
 
 
-const Game: NextPage = () => {
+const Battle: NextPage = () => {
     return (
         <div className={`h-full ${styles.backgroundBattlefield}`}>
             <GameObject />
@@ -11,4 +11,4 @@ const Game: NextPage = () => {
     )
 }
 
-export default Game;
+export default Battle;

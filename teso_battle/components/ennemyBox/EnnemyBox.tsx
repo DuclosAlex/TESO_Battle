@@ -72,8 +72,8 @@ const EnnemyBox: React.FC<Ennemy> = (ennemy) => {
             <div className='w-full h-full bg-neutral-800 absolute rounded-3xl opacity-60 z-20'>
                 <div className="relative w-full h-full">
 
-                <p className="bg-red-500 w-full h-1/4 absolute rounded-3xl top-1/2 left-1/2 transform rotate-45 -translate-y-1/2 -translate-x-1/2 z-20"></p>
-                <p className="bg-red-500 w-full h-1/4 absolute rounded-3xl top-1/2 left-1/2 transform -rotate-45 -translate-y-1/2 -translate-x-1/2"></p>
+                <p className="bg-red-500 w-5/6 h-1/4 absolute rounded-3xl top-1/2 left-1/2 transform rotate-45 -translate-y-1/2 -translate-x-1/2 z-20"></p>
+                <p className="bg-red-500 w-5/6 h-1/4 absolute rounded-3xl top-1/2 left-1/2 transform -rotate-45 -translate-y-1/2 -translate-x-1/2"></p>
                 </div>
             </div>
             }

@@ -1,5 +1,5 @@
 # TESO_Battle
-React/Next Project on TESO universe
+React/Next Project on TESO universe with Nest.js API
 
 ## First part : Base Feature
 
