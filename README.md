@@ -13,7 +13,13 @@ React/Next Project on TESO universe with Nest.js API
   - Add character Menu
   - Add battle Menu 
 
+
+
 ## Dev Log 
+
+ - 22/06/2023
+
+ Start work on menu and navigation, start use layout and fetch, catch data from API ok ! Made link for campaign menu. Had to think about how to construct stage. Component or page ? Should i fetch stage with campaign data and find a way to send it in stage component/page ( like props ?) Or should i fetch stage data when user choose campaign by fetching with campaign id ? Maybe last method will be better, i can try loading screen with next. 
 
  - 19/06/2023 
 
