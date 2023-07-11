@@ -12,16 +12,16 @@ const EnnemyBox: React.FC<Ennemy> = (ennemy) => {
     const ennemyState = useAppSelector((state) => state.ennemySlice);
     const dispatch = useAppDispatch();
     const [isEnnemySelected, setIsEnnemySelected] = useState(false);
-    const [lastPvValue, setLastPvValue] = useState(ennemy.pv);
+    const [lastPvValue, setLastPvValue] = useState(ennemy.lp);
     const [ isDead, setIsDead] = useState(false);
 
     // Fonction permettant de sélectionnez un ennemy
     const selectCurrentEnnemy = () => {
 
-        if(lastPvValue !== ennemy.pv) {
+        if(lastPvValue !== ennemy.lp) {
             setIsEnnemySelected(true);
             dispatch(resetEnnemy())
-            dispatch(selectEnnemy({...ennemy, pv : lastPvValue}))
+            dispatch(selectEnnemy({...ennemy, lp : lastPvValue}))
         }
         else {
 
@@ -38,14 +38,14 @@ const EnnemyBox: React.FC<Ennemy> = (ennemy) => {
                 setIsEnnemySelected(false)
             }
             // gestion des pv et du status isDead
-            if(ennemyState.ennemies[0].pv !== lastPvValue && ennemyState.ennemies[0].id === ennemy.id) {
-                if(ennemyState.ennemies[0].pv <= 0) {
+            if(ennemyState.ennemies[0].lp !== lastPvValue && ennemyState.ennemies[0].id === ennemy.id) {
+                if(ennemyState.ennemies[0].lp <= 0) {
                     setLastPvValue(0);
                     setIsDead(true);
                     setIsEnnemySelected(false)
                 }
                 else {
-                    setLastPvValue(ennemyState.ennemies[0].pv);
+                    setLastPvValue(ennemyState.ennemies[0].lp);
                 }
             }
             
@@ -60,7 +60,7 @@ const EnnemyBox: React.FC<Ennemy> = (ennemy) => {
             `}>
             <p className="w-full">{ennemy.name}</p>
             <Image
-            src={ennemy.image}
+            src={ennemy.src}
             alt={ennemy.alt}
             width={140}
             height={120} />

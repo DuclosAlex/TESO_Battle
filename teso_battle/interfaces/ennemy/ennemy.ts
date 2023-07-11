@@ -1,7 +1,7 @@
 export interface Ennemy {
-    name: string;
-    pv: number;
-    image: string;
     id: number;
+    name: string;
+    lp: number;
+    src: string;
     alt: string;
 }

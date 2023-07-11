@@ -1,0 +1,9 @@
+.stageBox {
+    background : linear-gradient(to right, rgb(47, 47, 126), blue, rgb(47, 47, 126));
+    width : 60%;
+    padding : 0.2rem;
+    height : 10vh;
+    border : rgb(190, 186, 186) 4px solid;
+}
+
+
