@@ -1,42 +1,48 @@
-import { useState } from "react";
+'use client'
 import { Ennemy } from "@/interfaces/Ennemy/ennemy";
 import styles from './stageModal.module.css';
+import ReactPortal from "../ReactPortal/ReactPortal";
 
 export interface ModalProps {
-    ennemies: Ennemy[];
-    stageName: string;
+    isOpen: boolean;
     onClose: () => void;
 }
 
-const StageModal: React.FC<ModalProps> = ({ ennemies, stageName, onClose}) => {
+const StageModal = ({ isOpen, onClose}: ModalProps) => {
+
+
+    if(!isOpen) return null;
 
     return (
-        <>
-            <div className={styles.modalOverlay}>
-                <div className={styles.modalWrapper}>
-                    <div className={styles.modal}>
-                        <div className={`${styles.modalHeader} font-semibold text-lg p-2`}>
-                            <p>Niveau : {stageName} </p>
-                        </div>
-                        <div className={`${styles.modalBody}`}>
-                            <div>
-
+        <ReactPortal wrapperId="react-portal">
+            <>
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modalWrapper}>
+                        <div className={styles.modal}>
+                            <div className={`${styles.modalHeader} font-semibold text-lg p-2`}>
+                                <p>Niveau :  </p>
+                                <button onClick={onClose} className="text-red-500 bg-white">X</button>
                             </div>
-                            <div>
-                                <div className="battleInfo">
+                            <div className={`${styles.modalBody}`}>
+                                <div>
 
                                 </div>
-                                <div className="ennemyList">
+                                <div>
+                                    <div className="battleInfo">
 
+                                    </div>
+                                    <div className="ennemyList">
+
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+            </>
+        </ReactPortal>
     )
-
-}
+    }
 
 export default StageModal;

@@ -86,9 +86,8 @@ const playerBattleCharacterList: React.FC = () => {
         <div className="w-3/4 m-auto p-4 absolute inset-x-0 bottom-10 flex justify-around">
             {playerCharacter.map((character: Character) => {
                 return(
-                    // Pour vérifier le typade des valeurs Typescript force à utiliser le spread Operator
-                    <CharacterCard key={character.id} {...character} />
-                    
+                    // Pour vérifier le typage des valeurs Typescript force à utiliser le spread Operator
+                    <CharacterCard key={character.id} {...character} />                
                 )
             })}
 

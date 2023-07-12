@@ -17,7 +17,7 @@ const GameObject: React.FC = () => {
     useEffect(() => {
         if(characterState.characters[0]) {
 
-            setCurrentCharacterSkill(characterState.characters[0].skillList);
+            setCurrentCharacterSkill(characterState.currentCharacters[0].skillList);
 
         }
     }, [characterState])

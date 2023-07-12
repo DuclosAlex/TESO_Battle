@@ -14,10 +14,10 @@ export default async function Stage({params}: {params: {slug: string}}) {
     return (
         <div className={`${styles.stagePageContainer} flex flex-col items-center justify-center m-auto
         ${slug === 'pact' ? 'bg-red-400' : slug === 'domain' ? 'bg-yellow-400' : slug === 'alliance' ? 'bg-blue-400' : ''}`}>
+            <div id="modal-root"></div> 
             {result.map((stage: any) => (
                 <StageBox key={stage.id} {...stage} />
-            ))}
-            <div id="modal-root"></div>       
+            ))} 
         </div>
     )
 }

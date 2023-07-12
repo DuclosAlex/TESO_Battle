@@ -16,7 +16,7 @@ const CharacterCard: React.FC<Character> = (character) => {
 
     const handleClick = () => {
 
-        if(characterState.characters.some((char) => char.id === character.id)) {
+        if(characterState.currentCharacters.some((char) => char.id === character.id)) {
             return 
         }
         setIsCharacterSelected(true)
@@ -27,9 +27,9 @@ const CharacterCard: React.FC<Character> = (character) => {
     }
 
     useEffect(() => {
-            if(characterState.characters[0]) {
+            if(characterState.currentCharacters[0]) {
 
-                if(characterState.characters[0].id !== character.id && isCharacterSelected === true) {
+                if(characterState.currentCharacters[0].id !== character.id && isCharacterSelected === true) {
                     
                     setIsCharacterSelected(false);
                 }
